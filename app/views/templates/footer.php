@@ -19,12 +19,12 @@
 
             $('#formModalLabel').html('Ubah Data Mahasiswa');
             $('.modal-footer button[type=submit]').html('Ubah Data');
-            $('.modal-body form').attr('action', '<?= BASE_URL; ?>/mahasiswa/ubah');
+            $('.modal-body form').attr('action', '<?= BASEURL; ?>/mahasiswa/ubah');
 
             const id = $(this).data('id');
 
             $.ajax({
-                url: '<?= BASE_URL; ?>/mahasiswa/getubah',
+                url: '<?= BASEURL; ?>/mahasiswa/getubah',
                 data: {
                     id: id
                 },
@@ -36,6 +36,41 @@
                     $('#email').val(data.email);
                     $('#jurusan').val(data.jurusan);
                     $('#id').val(data.id);
+                }
+            });
+
+        });
+
+    });
+    $(function() {
+
+        $('.tombolTambahDataMk').on('click', function() {
+            $('#formModalLabelMk').html('Tambah Data Matakuliah');
+            $('.modal-footer button[type=submit]').html('Tambah Data');
+            $('#nama').val('');
+            $('#id_mk').val('');
+            $('#id_mhs').val('');
+        });
+
+
+        $('.tampilModalUbahMk').on('click', function() {
+
+            $('#formModalLabelMk').html('Ubah Data Matakuliah');
+            $('.modal-footer button[type=submit]').html('Ubah Data');
+            $('.modal-body form').attr('action', '<?= BASEURL; ?>/mk/ubah');
+
+            const id_mk = $(this).data('id_mk');
+
+            $.ajax({
+                url: '<?= BASEURL; ?>/mk/getubah',
+                data: {
+                    id_mk: id_mk
+                },
+                method: 'post',
+                dataType: 'json',
+                success: function(data) {
+                    $('#nama').val(data.nama);
+                    $('#id_mk').val(data.id_mk);
                 }
             });
 

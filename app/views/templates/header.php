@@ -20,6 +20,8 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="<?= BASEURL; ?>">Home <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="<?= BASEURL; ?>/mahasiswa">Mahasiswa</a>
+          <a class="nav-item nav-link" href="<?= BASEURL; ?>/mk">Matakuliah</a>
+          <a class="nav-item nav-link" href="<?= BASEURL; ?>/plj">Pelajaran</a>
         </div>
       </div>
     </div>
